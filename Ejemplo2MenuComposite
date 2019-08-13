@@ -2,39 +2,27 @@ package composite.examples.menu;
 
 import java.util.ArrayList;
 
-public class MenuComposite extends MenuComponent {
+public class CompositeMenu extends ComponenteMenu {
 
-    private ArrayList<MenuComponent> menuComponents;
+    private ArrayList<ComponenteMenu> ComponenteMenus;
 
-    public MenuComposite(String name) {
-        this.name = name;
-        menuComponents = new ArrayList<>();
+    public CompositeMenu(String nombre) {
+        this.nombre = nombre;
+        ComponenteMenus = new ArrayList<>();
     }
 
     @Override
-    public void add(MenuComponent component) {
-        this.menuComponents.add(component);
+    public void add(ComponenteMenu componente) {
+        this.ComponenteMenus.add(componente);
     }
 
     @Override
-    public void remove(MenuComponent component) {
-        this.menuComponents.remove(component);
+    public void remove(ComponenteMenu componente) {
+        this.ComponenteMenus.remove(componente);
     }
 
     @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public void print() {
-
-        System.out.print(identado.toString() + "* " + getName() + "\n");
-        //System.out.println(identado.toString() + "---------------------");
-        identado.append("     ");
-        for(MenuComponent menuComponent : menuComponents){
-            menuComponent.print();
-        }
-        identado.setLength(identado.length() - 5);
+    public String getnombre() {
+        return this.nombre;
     }
 }
