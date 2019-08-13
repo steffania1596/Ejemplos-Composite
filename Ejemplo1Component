@@ -1,9 +1,5 @@
 package javamex.patronesdiseño.composite;
 
-/**
- * @author oblancarte
- * 
-*/
 public abstract class AbstractProduct {
 
     protected String name;
