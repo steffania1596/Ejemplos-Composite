@@ -1,35 +1,33 @@
-package javamex.patronesdiseño.composite;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class CompositeProduct extends AbstractProduct {
+public class productooComposite extends CproductooAbstracto {
 
-    private List< AbstractProduct > products = new ArrayList< AbstractProduct >();
+    private List< CproductooAbstracto > productos = new ArrayList< CproductooAbstracto >();
 
-    public CompositeProduct(String name) {
+    public productooComposite(String name) {
         super(name, 0);
     }
 
     @Override
-    public double getPrice() {
-        double price = 0d;
-        for (AbstractProduct child : products) {
-            price += child.getPrice();
+    public double getPrecio() {
+        double precio = 0d;
+        for (CproductooAbstracto child : productos) {
+            precio += child.getPrecio();
         }
-        return price;
+        return precio;
     }
 
     @Override
-    public void setPrice(double price) {
+    public void setPrecio(double precio) {
         throw new UnsupportedOperationException();
     }
 
-    public void addProduct(AbstractProduct product) {
-        this.products.add(product);
+    public void agregarproductoo(CproductooAbstracto producto) {
+        this.productos.add(producto);
     }
 
-    public boolean removeProduct(AbstractProduct product) {
-        return this.products.remove(product);
+    public boolean removeproducto(CproductooAbstracto producto) {
+        return this.productos.remove(producto);
     }
 }
